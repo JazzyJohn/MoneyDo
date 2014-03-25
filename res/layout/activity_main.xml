@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res/com.example.moneydo"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    tools:context=".MainActivity" >
+
+    <net.jazzyjohn.ui.circlelayout.CircleList
+        android1:id="@+id/AVMoneyCircle"
+        android1:layout_width="match_parent"
+        android1:layout_height="match_parent"
+        android1:layout_alignParentBottom="true"
+        android1:layout_alignParentRight="true"
+        app:BorderSize="5"
+        app:NodeBackgroundColor="#99CC00"
+        app:NodeBorderColor="#33B5E5"
+        app:NodeRadius="10"
+        app:NodeTextColor="#FFFFFF"
+        app:RootBackgroundColor="#99CC00"
+        app:RootBorderColor="#33B5E5"
+        app:AnimationTime="500"
+        app:RootRadius="20"
+        app:RootTextColor="#FFFFFF" />
+
+</RelativeLayout>

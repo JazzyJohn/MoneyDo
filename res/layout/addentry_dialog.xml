@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="17dp"
+        android:onClick="cancel"
+        android:text="@string/cancel" />
+
+    <Button
+        android:id="@+id/addentry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:onClick="addEntry"
+        android:text="@string/add_entry" />
+
+    <RadioGroup
+        android:id="@+id/EntryTypeRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cancel"
+        android:layout_centerHorizontal="true" >
+
+        <RadioButton
+            android:id="@+id/ETS_PI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/Planned_Income" />
+
+        <RadioButton
+            android:id="@+id/ETS_NM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Needed_Money" />
+
+        <RadioButton
+            android:id="@+id/ETS_PO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Planned_Outcome" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/EntryAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/EntryTypeRadioGroup"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <DatePicker
+        android:id="@+id/DateOfEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/EntryAmount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:calendarViewShown="false" />
+    
+</RelativeLayout>

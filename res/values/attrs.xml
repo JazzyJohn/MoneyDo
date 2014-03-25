@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleList">
+      
+        <attr name="RootRadius" format="float"/>
+        <attr name="NodeRadius" format="float"/>
+        <attr name="RootBackgroundColor" format="color"/>
+        <attr name="RootBorderColor" format="color"/>
+        <attr name="RootTextColor" format="color"/>
+        <attr name="AnimationTime" format="integer"/>
+        <attr name="NodeBackgroundColor" format="color"/>
+        <attr name="NodeBorderColor" format="color"/>
+        <attr name="NodeTextColor" format="color"/>
+        <attr name="BorderSize" format="float"/>
+     </declare-styleable>
+</resources>
