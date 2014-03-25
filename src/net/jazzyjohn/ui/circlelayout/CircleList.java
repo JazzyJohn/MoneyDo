@@ -85,6 +85,7 @@ public class CircleList extends View {
 			mRoot.mLvl = 0;
 			mRoot.SetCoordSize();
 			mRoot.mCircleListener = listener;
+			mRoot.mChilds.clear();
 		
 	}
 	public CircleNode addNodeToRoot(String text, String label) {
@@ -288,7 +289,7 @@ public class CircleList extends View {
 		  	
 		  	public List<CircleNode> mChilds = new ArrayList<CircleNode>();
 		  	
-		 
+		    
 		  	public boolean CheckClick(float X,float Y,MotionEvent event){
 		  		int action =event.getActionMasked();
 		  		if(mBorderBounds.contains(X, Y)){
@@ -410,6 +411,11 @@ public class CircleList extends View {
 			        
 			      
 		  	}
+		  	public void ForcedSizeChange(){
+		  		mCurrentCenterX =mCircleCenterX;
+  				mCurrentCenterY =mCircleCenterY;
+  				mCurrentRadius =mCircleRadius;
+		  	}
 		  	private void CheckAnimation() {
 		  			if(!mAnimNeed){
 		  				mCurrentCenterX =mCircleCenterX;
@@ -457,6 +463,7 @@ public class CircleList extends View {
 		  	}
 		  	protected void DrawCircle(Canvas canvas){
 		  		mAnimNeed= true;
+		  		SetBounds();
 		  		if(mLvl<=mCicrleLvl){
 		  			 
 			  		   // Draw the shadow

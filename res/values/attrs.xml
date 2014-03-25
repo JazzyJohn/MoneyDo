@@ -13,4 +13,13 @@
         <attr name="NodeTextColor" format="color"/>
         <attr name="BorderSize" format="float"/>
      </declare-styleable>
+     <declare-styleable name="CircleLabel">
+      
+             
+        <attr name="BackgroundColor" format="color"/>
+        <attr name="BorderColor" format="color"/>
+        <attr name="TextColor" format="color"/>
+        <attr name="Label" format="string"/>
+       
+     </declare-styleable>
 </resources>

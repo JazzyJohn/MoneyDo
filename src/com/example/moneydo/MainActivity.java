@@ -16,6 +16,10 @@ import com.example.moneydo.mathlogic.MathEntry;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -28,6 +32,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.RemoteViews;
 import android.widget.TimePicker;
 
 public class MainActivity extends Activity {
@@ -90,6 +95,7 @@ public class MainActivity extends Activity {
 		public void onUp(CircleNode node) {
 			
 			node.mCircleRadius/=1.5f;
+			node.ForcedSizeChange();
 			findViewById(R.id.AVMoneyCircle).invalidate();
 		}
 
@@ -97,6 +103,7 @@ public class MainActivity extends Activity {
 		public void onDown(CircleNode node) {
 			
 			node.mCircleRadius*=1.5f;
+			node.ForcedSizeChange();
 			findViewById(R.id.AVMoneyCircle).invalidate();
 		}
     }
@@ -134,7 +141,7 @@ public class MainActivity extends Activity {
     	
 	    if(stageType==MainController.StageType.ST_MAIN_PAGE){
 	    	MainList.setLvl(0);
-	    	MainList.addNodeToRoot("SpendMoney",null,new BtnListener(){
+	    	MainList.addNodeToRoot(getResources().getString(R.string.spend_money),null,new BtnListener(){
 				@Override
 				public void onClick(CircleNode node) {
 					setContentView(R.layout.spend_dialog);
@@ -205,6 +212,46 @@ public class MainActivity extends Activity {
     	}
 	    MainList.startAnim();
 	    MainList.invalidate();
+	    updateWidget();
+    }
+    
+    public void updateWidget() {
+    	try {
+			
+	
+	    	Context context = getApplicationContext();
+	        AppWidgetManager manager = AppWidgetManager.getInstance(context);
+	        ComponentName thisWidget = new ComponentName(context, MainWidgetProvider.class);
+	    
+	        
+	        RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
+	
+	        remoteViews.setTextViewText(R.id.widgetTextView, mController.GetMainAmount());
+	     // Creates an explicit intent for an Activity in your app
+			Intent resultIntent = new Intent(context, MainActivity.class);
+			resultIntent.putExtra(MainActivity.INTENT_LAYOUT, R.layout.spend_dialog);
+			// The stack builder object will contain an artificial back stack for the
+			// started Activity.
+			// This ensures that navigating backward from the Activity leads out of
+			// your application to the Home screen.
+			TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
+			// Adds the back stack for the Intent (but not the Intent itself)
+			stackBuilder.addParentStack(MainActivity.class);
+			// Adds the Intent that starts the Activity to the top of the stack
+			stackBuilder.addNextIntent(resultIntent);
+			PendingIntent resultPendingIntent =
+			        stackBuilder.getPendingIntent(
+			            0,
+			            PendingIntent.FLAG_UPDATE_CURRENT
+			        );
+	        remoteViews.setOnClickPendingIntent(R.id.widgetTextView,resultPendingIntent);
+	
+	
+	
+	        manager.updateAppWidget(thisWidget, remoteViews);
+    	} catch (NullPointerException e) {
+			
+		}
     }
     
     @Override

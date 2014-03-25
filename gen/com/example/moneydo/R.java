@@ -17,6 +17,24 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int AnimationTime=0x7f010005;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int BackgroundColor=0x7f01000a;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int BorderColor=0x7f01000b;
         /** <p>Must be a floating point value, such as "<code>1.2</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -25,6 +43,14 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int BorderSize=0x7f010009;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int Label=0x7f01000d;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -95,6 +121,15 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int RootTextColor=0x7f010004;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int TextColor=0x7f01000c;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -122,13 +157,14 @@ containing a value of this type.
         public static final int RelativeLayout1=0x7f090009;
         public static final int SaveSettingBtn=0x7f09000a;
         public static final int SpendMoney=0x7f09000e;
-        public static final int action_exit=0x7f090012;
-        public static final int action_settings=0x7f090011;
+        public static final int action_exit=0x7f090013;
+        public static final int action_settings=0x7f090012;
         public static final int addentry=0x7f090002;
         public static final int cancel=0x7f090001;
         public static final int textView1=0x7f09000d;
         public static final int timeOFNotifyPicker=0x7f09000c;
-        public static final int widgetTextView=0x7f090010;
+        public static final int widgetLabel=0x7f090010;
+        public static final int widgetTextView=0x7f090011;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -190,6 +226,84 @@ containing a value of this type.
         public static final int moneydowidget=0x7f040000;
     }
     public static final class styleable {
+        /** Attributes that can be used with a CircleLabel.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CircleLabel_BackgroundColor com.example.moneydo:BackgroundColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircleLabel_BorderColor com.example.moneydo:BorderColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircleLabel_Label com.example.moneydo:Label}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircleLabel_TextColor com.example.moneydo:TextColor}</code></td><td></td></tr>
+           </table>
+           @see #CircleLabel_BackgroundColor
+           @see #CircleLabel_BorderColor
+           @see #CircleLabel_Label
+           @see #CircleLabel_TextColor
+         */
+        public static final int[] CircleLabel = {
+            0x7f01000a, 0x7f01000b, 0x7f01000c, 0x7f01000d
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.example.moneydo.R.attr#BackgroundColor}
+          attribute's value can be found in the {@link #CircleLabel} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.moneydo:BackgroundColor
+        */
+        public static final int CircleLabel_BackgroundColor = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.example.moneydo.R.attr#BorderColor}
+          attribute's value can be found in the {@link #CircleLabel} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.moneydo:BorderColor
+        */
+        public static final int CircleLabel_BorderColor = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.example.moneydo.R.attr#Label}
+          attribute's value can be found in the {@link #CircleLabel} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.moneydo:Label
+        */
+        public static final int CircleLabel_Label = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.example.moneydo.R.attr#TextColor}
+          attribute's value can be found in the {@link #CircleLabel} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.moneydo:TextColor
+        */
+        public static final int CircleLabel_TextColor = 2;
         /** Attributes that can be used with a CircleList.
            <p>Includes the following attributes:</p>
            <table>

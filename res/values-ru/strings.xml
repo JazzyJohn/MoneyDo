@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MoneyDo</string>
+    <string name="action_settings">Настройки</string>
+    <string name="action_exit">Выход</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="Planned_Income">Постоянный доход</string>
+    <string name="Planned_Outcome">Постоянный расход</string>
+    <string name="Needed_Money">Необходимый затраты</string>
+    <string name="add_entry">Добавить</string>
+    <string name="availablemoney">Доступные средства</string>
+    <string name="cancel">Отмена</string>
+    <string name="spend_money">Потратить деньги</string>
+ 	<string name="day_end">Изменение дневных трат</string>
+    	<string name="you_have">Вам доступно:</string>
+    		<string name="spend_some">Вы потратили сегодня?</string>
+    		<string name="reminderTime">Time Of Reminder</string>
+    		<string name="save">Save</string>
+</resources>

@@ -187,4 +187,12 @@ public class MainController {
 		mAvailableMoney.LowerAmount(amount);
 		
 	}
+
+
+	public CharSequence GetMainAmount() {
+		if(mAvailableMoney!=null){
+			return String.valueOf(mAvailableMoney.GetAmount());
+		}
+		return "";
+	}
 }
