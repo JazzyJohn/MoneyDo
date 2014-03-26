@@ -24,6 +24,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.moneydo.SettingsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"            
+            android:label="@string/app_name" >
+           
+        </activity>
         <receiver android:name="com.example.moneydo.MainWidgetProvider"  android:icon="@drawable/ic_launcher">
 		    <intent-filter>
 		        <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />

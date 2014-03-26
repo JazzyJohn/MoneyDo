@@ -10,7 +10,9 @@ import java.util.concurrent.TimeUnit;
 
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.preference.PreferenceManager;
 
 import com.example.moneydo.mathlogic.DatedEntry;
 import com.example.moneydo.mathlogic.EntryLibrary;
@@ -28,8 +30,6 @@ public class MainController {
 	private DatedEntry mPlanedIncome;
 	
 	private DatedEntry mPlanedOutcome;
-	
-	private Date mWorkingDate = new Date();
 	
 	public enum StageType{
 		ST_MAIN_PAGE,
@@ -95,6 +95,19 @@ public class MainController {
 	}
 	
 	private void GetNeededEntry(){
+		
+		Calendar calendar = Calendar.getInstance();
+		int day = calendar.get(Calendar.DAY_OF_MONTH);
+		try{
+			SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(mActivity);
+			day = Integer.parseInt(	mySharedPreferences.getString("currentdate", ""));
+		}catch ( NumberFormatException e) {
+			
+		}catch ( NullPointerException e) {
+			
+		}
+		calendar.set(Calendar.DAY_OF_MONTH,day);
+		Date mWorkingDate =calendar.getTime();
 		mEntryLibrary.DoGlobalCount(mWorkingDate);
 		mAvailableMoney =  mEntryLibrary.GetClosesEntry(MathEntry.EntryType.ET_AVAILABLEMONEY);
 		mPlanedIncome =   (DatedEntry)mEntryLibrary.GetClosesEntry(MathEntry.EntryType.ET_PLANEDINCOME,mWorkingDate);

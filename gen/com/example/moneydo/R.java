@@ -146,30 +146,26 @@ containing a value of this type.
     }
     public static final class id {
         public static final int AVMoneyCircle=0x7f090000;
-        public static final int CancelSettingBtn=0x7f09000b;
         public static final int DateOfEntry=0x7f090008;
         public static final int ETS_NM=0x7f090005;
         public static final int ETS_PI=0x7f090004;
         public static final int ETS_PO=0x7f090006;
         public static final int EntryAmount=0x7f090007;
         public static final int EntryTypeRadioGroup=0x7f090003;
-        public static final int MoneyCount=0x7f09000f;
-        public static final int RelativeLayout1=0x7f090009;
-        public static final int SaveSettingBtn=0x7f09000a;
-        public static final int SpendMoney=0x7f09000e;
-        public static final int action_exit=0x7f090013;
-        public static final int action_settings=0x7f090012;
+        public static final int MoneyCount=0x7f09000b;
+        public static final int SpendMoney=0x7f09000a;
+        public static final int action_exit=0x7f09000f;
+        public static final int action_settings=0x7f09000e;
         public static final int addentry=0x7f090002;
         public static final int cancel=0x7f090001;
-        public static final int textView1=0x7f09000d;
-        public static final int timeOFNotifyPicker=0x7f09000c;
-        public static final int widgetLabel=0x7f090010;
-        public static final int widgetTextView=0x7f090011;
+        public static final int editText1=0x7f090009;
+        public static final int widgetLabel=0x7f09000c;
+        public static final int widgetTextView=0x7f09000d;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int addentry_dialog=0x7f030001;
-        public static final int settings_dialog=0x7f030002;
+        public static final int day_picker_dialog=0x7f030002;
         public static final int spend_dialog=0x7f030003;
         public static final int widget_layout=0x7f030004;
     }
@@ -224,6 +220,7 @@ containing a value of this type.
     }
     public static final class xml {
         public static final int moneydowidget=0x7f040000;
+        public static final int preferences=0x7f040001;
     }
     public static final class styleable {
         /** Attributes that can be used with a CircleLabel.

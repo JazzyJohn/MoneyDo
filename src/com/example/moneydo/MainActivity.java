@@ -33,7 +33,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.RemoteViews;
-import android.widget.TimePicker;
+
 
 public class MainActivity extends Activity {
 
@@ -268,8 +268,8 @@ public class MainActivity extends Activity {
                 System.exit(0);
                 return true;
             case R.id.action_settings:
-            	setContentView(R.layout.settings_dialog);
-				mStage =WindowStage.WS_DIALOG_WINDOW;
+            	Intent intent = new Intent(this, SettingsActivity.class);
+            	startActivity(intent);
             	break;
               
         }
@@ -312,11 +312,7 @@ public class MainActivity extends Activity {
   		imm.hideSoftInputFromWindow(textField.getWindowToken(), 0);
     	openMainWindow();
     }
-    public void saveSetting(View view){
-    	TimePicker picker = (TimePicker) findViewById(R.id.timeOFNotifyPicker);
-    	
-    	openMainWindow(); 
-    }
+   
     public void cancel(View view){
     	openMainWindow(); 
     }
@@ -363,5 +359,9 @@ public class MainActivity extends Activity {
 	
 	    return calendar.getTime();
     }
+    
+    
+  
+
     
 }

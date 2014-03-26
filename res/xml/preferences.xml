@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" 
+    
+    >
+    
+ <PreferenceCategory
+                android:title="Debug Setting">
+        <EditTextPreference
+                android:name="Current Date"
+                android:summary="Curent Date for testing"
+                android:defaultValue=""
+                android:title="Current Date"
+                android:key="currentdate"
+				
+		/>
+        
+        </PreferenceCategory>
+</PreferenceScreen>
